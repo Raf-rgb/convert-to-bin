@@ -10,9 +10,9 @@ def get_bin(text):
     bin = ""
 
     for s in text:
-        bin += decimal_to_bin(ord(s))
+        bin += " " + decimal_to_bin(ord(s))
 
-    return jsonify({ "binario" : bin})
+    return jsonify({ "binario" : bin[1:]})
 
 @app.route('/getText/<string:bin>')
 def get_text(bin):
