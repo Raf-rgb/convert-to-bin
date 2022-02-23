@@ -1,3 +1,4 @@
+from distutils.log import debug
 from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -29,4 +30,4 @@ def decimal_to_bin(decimal):
     return "0" + bin[::-1]
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug = True)
