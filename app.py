@@ -10,7 +10,7 @@ def get_bin(text):
     bin = ""
 
     for s in text:
-        bin += " " + decimal_to_bin(ord(s))
+        bin += decimal_to_bin(ord(s))
 
     return jsonify({ "binario" : bin})
 
