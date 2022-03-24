@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/getBin/<string:text>')
+@app.route('/bin/<string:text>')
 def get_bin(text):
     # Se reempla el _ por un espacio
     text = text.replace("_", " ")
@@ -12,9 +12,9 @@ def get_bin(text):
     for s in text:
         bin += " " + decimal_to_bin(ord(s))
 
-    return jsonify({ "binario" : bin[1:]})
+    return jsonify({ "bin" : bin[1:]})
 
-@app.route('/getText/<string:bin>')
+@app.route('/text/<string:bin>')
 def get_text(bin):
     # Se obtiene una lista de los numeros
     # binarios con la funcino split
@@ -25,7 +25,7 @@ def get_text(bin):
     for b in bins:
         text += chr(bin_to_decimal(b))
 
-    return jsonify({ "texto" : text})
+    return jsonify({ "text" : text})
 
 # Funcion para convertir un decimal a binario
 def bin_to_decimal(bin):
